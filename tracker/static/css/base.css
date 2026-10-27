@@ -1,0 +1,88 @@
+/* base.css -- reset, typography, page layout, top bar, navigation. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  /* A readable system font stack: no download needed, works offline. */
+  font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; }
+h3 { font-size: 1rem; }
+p { margin: 0 0 .5rem; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+[hidden] { display: none !important; }
+
+.container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+main.container { padding-top: 20px; padding-bottom: 40px; outline: none; }
+.muted { color: var(--muted); }
+.small { font-size: .875rem; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.row--between { justify-content: space-between; }
+.spacer { flex: 1; }
+
+/* ---------- Top bar ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar::after { content: ""; display: block; height: 4px; background: var(--stripe); }
+.topbar__inner { display: flex; align-items: center; gap: 12px; min-height: 56px; }
+.topbar__actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.brand__text strong { color: var(--accent); }
+.brand__mark { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 22px; height: 22px; }
+.brand__mark i { border-radius: 3px; background: var(--cat-1); }
+.brand__mark i:nth-child(2) { background: var(--cat-2); }
+.brand__mark i:nth-child(3) { background: var(--cat-3); }
+.brand__mark i:nth-child(4) { background: var(--cat-5); }
+
+.nav { display: flex; gap: 4px; margin-left: 12px; }
+.nav a {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 10px;
+  color: var(--muted); text-decoration: none; font-weight: 700;
+}
+.nav a:hover { background: var(--surface-2); color: var(--text); }
+.nav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
+
+/* ---------- Phones: nav becomes a bottom tab bar (feels like a real app) ---------- */
+@media (max-width: 720px) {
+  .nav {
+    position: fixed; left: 0; right: 0; bottom: 0; margin: 0; z-index: 30;
+    background: var(--surface); border-top: 1px solid var(--border);
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    justify-content: space-around;
+  }
+  .nav a { flex-direction: column; gap: 2px; font-size: .75rem; padding: 6px 18px; }
+  main.container { padding-bottom: 96px; }
+  .footer { padding-bottom: 96px; }
+  .brand__text { font-size: .95rem; }
+}
+
+.footer { color: var(--muted); font-size: .85rem; padding-top: 8px; padding-bottom: 32px; }
+
+/* ---------- Page header inside views ---------- */
+.page-head { display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.page-head__title { flex: 1; min-width: 200px; }
+.page-head__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.crumb { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-weight: 700; font-size: .9rem; margin-bottom: 6px; }
+.crumb:hover { color: var(--accent); }
+
+/* ---------- Two-column course layout ---------- */
+.layout-course { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
+.layout-course__side { display: flex; flex-direction: column; gap: 16px; }
+@media (min-width: 900px) {
+  .layout-course { grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr); }
+  .layout-course__side { position: sticky; top: 84px; }
+}
+.grid-cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
