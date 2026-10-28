@@ -1,0 +1,13 @@
+# Render "Blueprint" file: tells Render how to build and run the app.
+# In Render: New + -> Blueprint -> pick your GitHub repo. That's it.
+services:
+  - type: web
+    name: block-b-grade-tracker
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3

@@ -1,0 +1,25 @@
+{# Top bar: logo, navigation, save-status chip, install + theme buttons. #}
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="#/" aria-label="Go to dashboard">
+      <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="brand__text">Block B <strong>Grades</strong></span>
+    </a>
+
+    <span id="save-chip" class="chip chip--save" role="status"
+          title="Your work is saved automatically in this browser's local web storage.">
+      <span class="chip__dot"></span><span id="save-chip-text">Saved to local web storage</span>
+    </span>
+
+    <div class="topbar__actions">
+      <button id="install-btn" class="btn btn--ghost btn--small" hidden>Install app</button>
+      <button id="theme-btn" class="icon-btn" aria-label="Switch light or dark theme" title="Switch theme"></button>
+    </div>
+
+    {# On phones this becomes a tab bar fixed to the bottom of the screen (see base.css). #}
+    <nav class="nav" aria-label="Main">
+      <a href="#/" data-nav="dashboard"><span data-icon="home"></span><span>Dashboard</span></a>
+      <a href="#/settings" data-nav="settings"><span data-icon="settings"></span><span>Settings</span></a>
+    </nav>
+  </div>
+</header>
