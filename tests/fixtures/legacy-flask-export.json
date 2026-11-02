@@ -1,0 +1,89 @@
+{
+ "data": [
+  [
+   "Course",
+   "Code",
+   "Units",
+   "Component",
+   "Weight %",
+   "Item",
+   "Score",
+   "Max",
+   "Percent"
+  ],
+  [
+   "Intro =cmd()",
+   "IT 101",
+   3,
+   "Quizzes",
+   40,
+   "Q1",
+   8,
+   10,
+   null
+  ],
+  [
+   "Intro =cmd()",
+   "IT 101",
+   3,
+   "Quizzes",
+   40,
+   "Q2",
+   null,
+   10,
+   null
+  ],
+  [
+   "Intro =cmd()",
+   "IT 101",
+   3,
+   "Final",
+   60,
+   null,
+   null,
+   null,
+   null
+  ],
+  [
+   "Empty course",
+   null,
+   2,
+   null,
+   0,
+   null,
+   null,
+   null,
+   null
+  ]
+ ],
+ "settings": [
+  [
+   "Setting",
+   "Value"
+  ],
+  [
+   "Passing percent",
+   75
+  ],
+  [
+   "Failing grade",
+   5
+  ],
+  [
+   "Round percent",
+   "yes"
+  ],
+  [
+   "Grade scale: from percent",
+   "Grade"
+  ],
+  [
+   90,
+   1
+  ],
+  [
+   75,
+   3
+  ]
+ ]
+}
