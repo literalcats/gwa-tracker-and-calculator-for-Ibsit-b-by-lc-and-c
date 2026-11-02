@@ -1,4 +1,6 @@
-Written with Claude (Anthropic); Carl Ianne directed the design and testing. See docs/GUIDE.
+> **AI disclosure:** Written with Claude (Anthropic). Carl Ianne directed the design,
+> made the decisions, and tested the result. See [docs/GUIDE.md](docs/GUIDE.md)
+> for how it was built and what has and has not been tested.
 # I-BSIT-B GWA Calculator and Grade Tracker (By Carl Ianne)
 
 A static website (HTML + CSS + JavaScript, **no server code**) that works offline as an installable app (PWA).
