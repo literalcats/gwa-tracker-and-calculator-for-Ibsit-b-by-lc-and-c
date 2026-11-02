@@ -1,6 +1,6 @@
 https://gwa-tracker-and-calculator-by-lc-an.vercel.app/#/
-> **AI disclosure:** Written with Claude (Anthropic). Carl Ianne directed the design,
-> made the decisions, and tested the result. See [docs/GUIDE.md](docs/GUIDE.md)
+> **AI disclosure:** Written with Claude (Anthropic). Carl Ianne directed the design
+> made the decisions, and tested the result. See [/docs](/docs)
 > for how it was built and what has and has not been tested.
 # I-BSIT-B GWA Calculator and Grade Tracker (By Carl Ianne)
 
